@@ -120,7 +120,7 @@ themeJaspRaw = function(legend.position = "none",
         legend.justification  = legend.justification,
         legend.key            = element_rect(color = "transparent", fill = "transparent"),
         legend.key.size       = unit(1, "cm"),
-        legend.text           = element_text(size = legend.cex * fontsize),
+        legend.text           = element_text(family = family, size = legend.cex * fontsize),
         legend.title          = legend.title,
         legend.position       = legend.position,
 
