@@ -10,6 +10,8 @@ themeJasp(
   yAxis = TRUE,
   sides = "bl",
   axis.title.cex = getGraphOption("axis.title.cex"),
+  axisTextXangle = getGraphOption("axisTextXangle"),
+  axisTextHjust = getGraphOption("axisTextHjust"),
   bty = getGraphOption("bty"),
   fontsize = getGraphOption("fontsize"),
   family = getGraphOption("family"),
@@ -30,6 +32,10 @@ themeJasp(
 \item{sides}{see \link{geom_rangeframe}}
 
 \item{axis.title.cex}{scalar magnification for the title of the axes.}
+
+\item{axisTextXangle}{set axis text rotate angle}
+
+\item{axisTextHjust}{set axis text horizontal justification}
 
 \item{bty}{remake R's bty  = 'n'?}
 
