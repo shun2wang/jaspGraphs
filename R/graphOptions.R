@@ -5,6 +5,8 @@
   fontsize        = 17L,
   legend.cex      = 1.25,
   axis.title.cex  = 1.2,
+  axisTextXangle  = NULL,
+  axisTextHjust   = NULL,
   family          = NULL,
   legend.coordinates = list(left = .15,
                             mid = .5,

@@ -12,6 +12,8 @@
 #' @param graph a ggplot2 object
 #' @param sides see \link{geom_rangeframe}
 #' @param axis.title.cex scalar magnification for the title of the axes.
+#' @param axisTextXangle set axis text rotate angle
+#' @param axisTextHjust set axis text horizontal justification
 #' @param bty remake R's bty  = 'n'?
 #' @param fontsize global font size.
 #' @param family global font familiy.
@@ -27,6 +29,8 @@ themeJasp <- function(graph,
                      yAxis = TRUE,
                      sides = "bl",
                      axis.title.cex = getGraphOption("axis.title.cex"),
+                     axisTextXangle = getGraphOption("axisTextXangle"),
+                     axisTextHjust  = getGraphOption("axisTextHjust"),
                      bty = getGraphOption("bty"),
                      fontsize = getGraphOption("fontsize"),
                      family = getGraphOption("family"),
@@ -67,7 +71,8 @@ themeJasp <- function(graph,
     graph <- graph + coord_flip()
 
   graph <- graph + themeJaspRaw(legend.position = legend.position,
-                                axis.title.cex = axis.title.cex, family = family,
+                                axis.title.cex = axis.title.cex, axisTextXangle = axisTextXangle,
+                                axisTextHjust = axisTextHjust, family = family,
                                 fontsize = fontsize, legend.justification = legend.justification,
                                 axisTickLength = axisTickLength, axisTickWidth = axisTickWidth)
 
@@ -92,6 +97,8 @@ themeJasp <- function(graph,
 themeJaspRaw = function(legend.position = "none",
                         legend.cex = 1,
                         axis.title.cex = 1,
+                        axisTextXangle = NULL,
+                        axisTextHjust = NULL,
                         family = getGraphOption("family"),
                         axisTickLength = getGraphOption("axisTickLength"),
                         axisTickWidth = getGraphOption("axisTickWidth"),
@@ -111,7 +118,7 @@ themeJaspRaw = function(legend.position = "none",
         axis.ticks = element_line(size = axisTickWidth, color = "black"), # tick width
         axis.title.x = element_text(margin = margin(t = 15, b = 5)),
         axis.title.y = element_text(margin = margin(r = 10, l = 5)),
-        axis.text.x = element_text(size = fontsize, colour = "black", margin = margin(t = 7), vjust = Xvjust),
+        axis.text.x = element_text(size = fontsize, angle = axisTextXangle, colour = "black", margin = margin(t = 7), hjust = axisTextHjust, vjust = Xvjust),
         axis.text.y = element_text(size = fontsize, colour = "black", margin = margin(r = 7), vjust = Yvjust),
 
         # legend
